@@ -88,6 +88,7 @@ class Player(pygame.sprite.Sprite):
                 if self.y_change < 0:
                     self.rect.y = hits[0].rect.bottom
 
+
 class Block(pygame.sprite.Sprite):
     def __init__(self, game, x, y):
         super().__init__()
