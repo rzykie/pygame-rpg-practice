@@ -32,6 +32,7 @@ class Player(pygame.sprite.Sprite):
         self.y_change = 0
 
         self.facing = 'down'
+        self.animation_loop = 0
 
         self.image = self.game.character_spritesheet.get_sprite(3, 2, self.width, self.height)
 
@@ -41,6 +42,7 @@ class Player(pygame.sprite.Sprite):
 
     def update(self):
         self.movement()
+        self.animate()
 
         self.rect.x += self.x_change
         self.collide_blocks("x")
@@ -189,7 +191,7 @@ class Enemy(pygame.sprite.Sprite):
             self.x_change -= ENEMY_SPEED
             self.movement_loop -= 1
 
-            if self.movement_loop <= self.max_travel:
+            if self.movement_loop <= -self.max_travel:
                 self.facing = 'right'
 
         if self.facing == 'right':
