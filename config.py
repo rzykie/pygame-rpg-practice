@@ -3,12 +3,14 @@ WIN_HEIGHT = 768
 TILESIZE = 32
 FPS = 60
 
-PLAYER_LAYER = 4
+PLAYER_LAYER = 5
+BOSS_LAYER = 4
 ENEMY_LAYER = 3
 BLOCK_LAYER = 2
 GROUND_LAYER = 1
 PLAYER_SPEED = 5
-ENEMY_SPEED = 3
+ENEMY_SPEED = 2
+BOSS_SPEED = 4
 
 RED = (255, 0, 0)
 BLACK = (0, 0, 0)
@@ -28,7 +30,7 @@ tilemap = [
     'B.......B....................B',
     'B.......B....................B',
     'B.......B....................B',
-    'B.......B....................B',
+    'B.......B..........G.........B',
     'B............................B',
     'B............................B',
     'B............................B',
