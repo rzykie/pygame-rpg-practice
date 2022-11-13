@@ -40,21 +40,21 @@ class Player(pygame.sprite.Sprite):
         self.rect.x = self.x
         self.rect.y = self.y
 
-        self.down_animations = [self.game.character_spritesheet.get_sprite(3, 2, self.width, self.height),
-                           self.game.character_spritesheet.get_sprite(35, 2, self.width, self.height),
-                           self.game.character_spritesheet.get_sprite(68, 2, self.width, self.height)]
+        self.down_animations = [self.game.character_spritesheet.get_sprite(3, 2, self.width, self.height).convert_alpha(),
+                           self.game.character_spritesheet.get_sprite(35, 2, self.width, self.height).convert_alpha(),
+                           self.game.character_spritesheet.get_sprite(68, 2, self.width, self.height).convert_alpha()]
 
-        self.up_animations = [self.game.character_spritesheet.get_sprite(3, 34, self.width, self.height),
-                         self.game.character_spritesheet.get_sprite(35, 34, self.width, self.height),
-                         self.game.character_spritesheet.get_sprite(68, 34, self.width, self.height)]
+        self.up_animations = [self.game.character_spritesheet.get_sprite(3, 34, self.width, self.height).convert_alpha(),
+                         self.game.character_spritesheet.get_sprite(35, 34, self.width, self.height).convert_alpha(),
+                         self.game.character_spritesheet.get_sprite(68, 34, self.width, self.height).convert_alpha()]
 
-        self.left_animations = [self.game.character_spritesheet.get_sprite(3, 98, self.width, self.height),
-                           self.game.character_spritesheet.get_sprite(35, 98, self.width, self.height),
-                           self.game.character_spritesheet.get_sprite(68, 98, self.width, self.height)]
+        self.left_animations = [self.game.character_spritesheet.get_sprite(3, 98, self.width, self.height).convert_alpha(),
+                           self.game.character_spritesheet.get_sprite(35, 98, self.width, self.height).convert_alpha(),
+                           self.game.character_spritesheet.get_sprite(68, 98, self.width, self.height).convert_alpha()]
 
-        self.right_animations = [self.game.character_spritesheet.get_sprite(3, 66, self.width, self.height),
-                            self.game.character_spritesheet.get_sprite(35, 66, self.width, self.height),
-                            self.game.character_spritesheet.get_sprite(68, 66, self.width, self.height)]
+        self.right_animations = [self.game.character_spritesheet.get_sprite(3, 66, self.width, self.height).convert_alpha(),
+                            self.game.character_spritesheet.get_sprite(35, 66, self.width, self.height).convert_alpha(),
+                            self.game.character_spritesheet.get_sprite(68, 66, self.width, self.height).convert_alpha()]
 
     def update(self):
         self.movement()
@@ -206,13 +206,13 @@ class Enemy(pygame.sprite.Sprite):
         self.rect.x = self.x
         self.rect.y = self.y
 
-        self.left_animations = [self.game.enemy_spritesheet.get_sprite(3, 98, self.width, self.height),
-                           self.game.enemy_spritesheet.get_sprite(35, 98, self.width, self.height),
-                           self.game.enemy_spritesheet.get_sprite(68, 98, self.width, self.height)]
+        self.left_animations = [self.game.enemy_spritesheet.get_sprite(3, 98, self.width, self.height).convert_alpha(),
+                           self.game.enemy_spritesheet.get_sprite(35, 98, self.width, self.height).convert_alpha(),
+                           self.game.enemy_spritesheet.get_sprite(68, 98, self.width, self.height).convert_alpha()]
 
-        self.right_animations = [self.game.enemy_spritesheet.get_sprite(3, 66, self.width, self.height),
-                            self.game.enemy_spritesheet.get_sprite(35, 66, self.width, self.height),
-                            self.game.enemy_spritesheet.get_sprite(68, 66, self.width, self.height)]
+        self.right_animations = [self.game.enemy_spritesheet.get_sprite(3, 66, self.width, self.height).convert_alpha(),
+                            self.game.enemy_spritesheet.get_sprite(35, 66, self.width, self.height).convert_alpha(),
+                            self.game.enemy_spritesheet.get_sprite(68, 66, self.width, self.height).convert_alpha()]
 
     def update(self):
         self.movement()
@@ -283,15 +283,15 @@ class Boss(pygame.sprite.Sprite):
         self.max_travel = random.randint(15, 130)
 
         self.image = self.game.boss_spritesheet.get_sprite(62, 71, self.width, self.height)
-        self.image.set_colorkey(BLACK)
+        self.image.set_colorkey(WHITE)
 
         self.rect = self.image.get_rect()
         self.rect.x = self.x
         self.rect.y = self.y
 
-        self.left_animations = [self.game.boss_spritesheet.get_sprite(0, 71, self.width, self.height)]
+        self.left_animations = [self.game.boss_spritesheet.get_sprite(0, 71, self.width, self.height).convert_alpha()]
 
-        self.right_animations = [self.game.boss_spritesheet.get_sprite(0, 0, self.width, self.height)]
+        self.right_animations = [self.game.boss_spritesheet.get_sprite(0, 0, self.width, self.height).convert_alpha()]
 
     def update(self):
         self.movement()
