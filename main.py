@@ -20,6 +20,7 @@ class Game:
         self.intro_background = pygame.image.load("./img/introbackground.png")
         self.go_background = pygame.image.load("./img/gameover.png")
 
+
     def create_tile_map(self):
         for i, row in enumerate(tilemap):
             for j, column in enumerate(row):
