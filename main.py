@@ -17,8 +17,8 @@ class Game:
         self.enemy_spritesheet = Spritesheet('img/enemy.png')
         self.boss_spritesheet = Spritesheet('img/grue.png')
         self.attack_spritesheet = Spritesheet('img/attack.png')
-        self.intro_background = pygame.image.load("./img/introbackground.png")
-        self.go_background = pygame.image.load("./img/gameover.png")
+        self.intro_background = pygame.image.load("./img/introbackground.png").convert_alpha()
+        self.go_background = pygame.image.load("./img/gameover.png").convert_alpha()
 
 
     def create_tile_map(self):
