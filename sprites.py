@@ -283,7 +283,7 @@ class Boss(pygame.sprite.Sprite):
         self.max_travel = random.randint(15, 130)
 
         self.image = self.game.boss_spritesheet.get_sprite(62, 71, self.width, self.height)
-        # self.image.set_colorkey(BLACK)
+        self.image.set_colorkey(BLACK)
 
         self.rect = self.image.get_rect()
         self.rect.x = self.x
@@ -462,6 +462,7 @@ class Attack(pygame.sprite.Sprite):
 
     def collide(self):
         hits = pygame.sprite.spritecollide(self, self.game.enemies, True)
+        boss_hits = pygame.sprite.spritecollide(self, self.game.boss, True)
 
     def animate(self):
         direction = self.game.player.facing
